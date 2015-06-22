@@ -15,3 +15,9 @@ c_types = ["Denim", "Pants", "Sweaters", "Skirt", "Dresses"]
 c_types.each do |c_type|
   ClothingType.create(name: c_type)
 end
+
+Brand.all.each do |brand|
+  ClothingType.all.each do |c_type|
+    Product.create!(:brand => brand, :clothing_type => c_type)
+  end
+end
